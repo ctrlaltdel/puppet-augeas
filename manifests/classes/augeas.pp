@@ -12,6 +12,7 @@ class augeas::base {
     ensure => directory,
     require => $operatingsystem ? {
       debian => Package["augeas-lenses"],
+      ubuntu => Package["augeas-lenses"],
       redhat => Package["augeas"],
     },
   }
